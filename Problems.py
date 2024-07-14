@@ -26,3 +26,12 @@ while True:
 print("Bet:", total_winnings)
 
 
+# count punctuation
+sentance = input()
+count = 0
+for c in sentance:
+   if not (c.isalnum() or c.isspace()):
+      count += 1 
+print(count)
+
+
