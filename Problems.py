@@ -43,4 +43,14 @@ def is_prime(n):
          return False
     return True
 
+# compare last bit 
+input_s = input().split()
+num_1 = int(input_s[0])
+num_2 = int(input_s[1])
+
+if (num_1 % 2 == 0 and  num_2 % 2 == 0) or (num_1 % 2 == 1 and  num_2 % 2 == 1):
+   print("True")
+else:
+   print("False")
+
 
