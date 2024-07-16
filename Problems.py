@@ -47,10 +47,34 @@ def is_prime(n):
 input_s = input().split()
 num_1 = int(input_s[0])
 num_2 = int(input_s[1])
-
 if (num_1 % 2 == 0 and  num_2 % 2 == 0) or (num_1 % 2 == 1 and  num_2 % 2 == 1):
    print("True")
 else:
    print("False")
 
 
+# string practice 
+str_inp = input()
+
+
+# In the first line, print the third character of this string.
+print(str_inp[2])
+# In the second line, print the second to last character of this string.
+print(str_inp[-2:-1])
+# In the third line, print the first five characters of this string.
+print(str_inp[:5])
+# In the fourth line, print all but the last two characters of this string.
+print(str_inp[:len(str_inp)-2])
+# In the fifth line, print all the characters of this string with even indices 
+#(remember indexing starts at 0, so the characters are displayed starting with the first).
+print(str_inp[::2])
+# In the sixth line, print all the characters of this string with odd indices 
+#(i.e. starting with the second character in the string).
+print(str_inp[1::2])
+# In the seventh line, print all the characters of the string in reverse order.
+print(str_inp[::-1])
+# In the eighth line, print every second character of the string in reverse order, 
+# starting from the last one.
+print(str_inp[-1::-2])
+# In the ninth line, print the length of the given string.
+print(len(str_inp))
