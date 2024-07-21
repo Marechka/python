@@ -101,7 +101,6 @@ for num in result:
 
 # see number for the first or second time
 num_input = [int(x) for x in input().split()]
-
 num_set = set()
 for num in num_input:
    if num in num_set:
