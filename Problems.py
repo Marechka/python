@@ -89,3 +89,12 @@ def merge_intervals(intervals):
       else:
          i +=1
    return intervals
+
+# sets
+set_1 = set(input().split())
+set_2 = set(input().split())
+
+result = list(set_1.intersection(set_2))
+result = sorted(map(int, result))
+for num in result:
+  print(num, end = " ")
