@@ -155,3 +155,18 @@ for _ in range(M):
       print("OK")
    else:
       print("Access denied")
+
+#dict: word freq 
+word_input = list(input().split())
+word_freq = {}
+output = []
+
+for word in word_input:
+   if word not in word_freq.keys():
+      output.append(0)
+      word_freq[word] = 1
+   else:
+      output.append(word_freq[word])
+      word_freq[word] += 1
+for _ in output:
+   print(_, end=" ")
