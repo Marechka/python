@@ -108,3 +108,18 @@ for num in num_input:
    else:
       print("NO")
       num_set.add(num)
+
+# dict: word frequency 
+num_of_lists = int(input())
+word_number = dict()
+for i in range(num_of_lists):
+   words_in_line = input().split()
+   for word in words_in_line:
+      if word in word_number:
+         word_number[word] += 1
+      else:
+         word_number[word] = 1
+values = list(word_number.values())
+same_freq = [word for word, freq in word_number.items() if freq == max(values) ]
+same_freq.sort()
+print(same_freq[0])
