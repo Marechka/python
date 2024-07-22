@@ -138,4 +138,20 @@ if word in synonyms.keys():
    print(values[keys.index(word)])
 else: 
    print(keys[values.index(word)])
-   
+
+# dict: commands
+size = int(input())
+file_permissions = {} 
+ops_descr = {"execute":"X", "write": "W", "read" : "R"}
+for _ in range(size):
+   file_name, *allowed_ops = input().split()
+   file_permissions[file_name] = set(allowed_ops)
+
+M = int(input()) 
+for _ in range(M):
+   requested_op, file_name = input().split()
+   ops_code = ops_descr[requested_op]
+   if file_name in file_permissions and ops_code in file_permissions[file_name]:
+      print("OK")
+   else:
+      print("Access denied")
