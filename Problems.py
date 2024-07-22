@@ -123,3 +123,19 @@ values = list(word_number.values())
 same_freq = [word for word, freq in word_number.items() if freq == max(values) ]
 same_freq.sort()
 print(same_freq[0])
+
+# dict: find synonyms
+size_of_dict = int(input())
+synonyms = dict()
+for i in range(size_of_dict):
+   line = input().split()
+   synonyms[line[0]] = line[1]
+word = input()
+keys = list(synonyms.keys())
+values = list(synonyms.values())
+
+if word in synonyms.keys():
+   print(values[keys.index(word)])
+else: 
+   print(keys[values.index(word)])
+   
