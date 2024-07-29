@@ -170,3 +170,16 @@ for word in word_input:
       word_freq[word] += 1
 for _ in output:
    print(_, end=" ")
+
+# count primes
+def countPrimes(self, n: int) -> int:
+        if n<=2:
+            return 0
+        ref=[True]*(n)
+        i=2
+        while (i*i)<n:
+            if ref[i]:
+                for j in range(i*i,n,i):
+                    ref[j]=False
+            i+=1
+        return ref.count(True)-2
