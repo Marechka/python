@@ -207,3 +207,13 @@ if n < 6:
 else:
    result = 0
 print(result)
+
+
+# first digit in factorial
+n = int(input())
+
+result = 1
+if n != 0 or n != 1:
+   for i in range (1, n+1):
+	   result *= i
+print(str(result)[0])
