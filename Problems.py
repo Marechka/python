@@ -239,3 +239,12 @@ def trailingZeroes(self, n: int) -> int:
          current //= 5
 
    return zero_count
+
+#missing int
+
+def first_missing_int(integers):
+ integers.sort()
+ for i in integers:
+   if i != integers.index(i):
+      return integers.index(i)
+ return len(integers)
