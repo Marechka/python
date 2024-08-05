@@ -255,3 +255,18 @@ def first_missing_int(integers):
    for i in integers:
     sumOfNums += i
    return len(integers)*(len(integers) +1)//2 - sumOfNums
+
+# largest common divisor 
+m = int(input())
+n = int(input())
+
+if n == 0 or m == 0:
+   print(max(m,n))
+else:
+   maxDiv = 0
+   i = 1
+   while i <= min(m,n):
+      if n % i == 0 and m % i == 0:
+         maxDiv = i
+      i+=1
+   print(maxDiv) 
