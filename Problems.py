@@ -248,3 +248,10 @@ def first_missing_int(integers):
    if i != integers.index(i):
       return integers.index(i)
  return len(integers)
+
+# missing positive integer unsorted input
+ def missing_positive_int_unsorted(integers):
+   sumOfNums = 0
+   for i in integers:
+    sumOfNums += i
+   return len(integers)*(len(integers) +1)//2 - sumOfNums
