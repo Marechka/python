@@ -270,3 +270,27 @@ else:
          maxDiv = i
       i+=1
    print(maxDiv) 
+
+#better approach(from the end)
+m = int(input())
+n = int(input())
+
+if n == 0 or m == 0:
+   print(max(m,n))
+else:
+   maxDiv = min(m,n)
+   while maxDiv >= 1:
+      if n % maxDiv == 0 and m % maxDiv == 0:
+         print(maxDiv)
+         break
+      maxDiv -= 1
+
+# find unique paths .. factorial
+m = int(input())
+n = int(input())
+
+count_paths = 1
+
+for i in range(1, m):
+   count_paths = count_paths*(n-1+i)/i
+print(count_paths)
