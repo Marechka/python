@@ -347,4 +347,14 @@ else:
          flag = False
          break
 print(flag)
-   
+
+# numeric palindrome, not converting to string 
+def isPalindrome(self, x):
+   if x < 0:
+	   return False
+   for i in range(len(str(x))//2):
+      first = x // 10 ** (len(str(x))-1-i) % 10
+      last =  x // (10 ** i) % 10
+      if first != last:
+         return False
+   return True
