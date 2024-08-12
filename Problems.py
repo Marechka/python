@@ -335,3 +335,16 @@ def isPalindrome(self, x: int) -> bool:
       revertedNumber = revertedNumber * 10 + x % 10
       x //= 10
    return x == revertedNumber or x == revertedNumber // 10
+
+# palindrome asa string
+int_input = input()
+flag = True
+if int_input[0] == '-':
+   flag = False
+else:
+   for i in range(len(int_input)//2):
+      if int_input[i] != int_input[len(int_input)-1-i]:
+         flag = False
+         break
+print(flag)
+   
