@@ -349,7 +349,7 @@ else:
 print(flag)
 
 # numeric palindrome, not converting to string 
-def isPalindrome(self, x):
+def isPalindrome(x):
    if x < 0:
 	   return False
    for i in range(len(str(x))//2):
@@ -358,3 +358,10 @@ def isPalindrome(self, x):
       if first != last:
          return False
    return True
+
+# wave array
+def wave_array(integers):
+   integers.sort()
+   for i in range(0,len(integers)-1,2):
+      integers[i],integers[i+1] = integers[i+1],integers[i]
+   return integers
