@@ -365,3 +365,21 @@ def wave_array(integers):
    for i in range(0,len(integers)-1,2):
       integers[i],integers[i+1] = integers[i+1],integers[i]
    return integers
+
+# rotate array by k
+def rotate_array(nums, k):
+   n = len(nums)
+   k %= n
+
+   start = count = 0
+   while count < n:
+      current, prev = start, nums[start]
+      while True:
+         next_idx = (current + k) % n
+         nums[next_idx], prev = prev, nums[next_idx]
+         current = next_idx
+         count += 1
+
+         if start == current:
+               break
+      start += 1
