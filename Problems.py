@@ -383,3 +383,17 @@ def rotate_array(nums, k):
          if start == current:
                break
       start += 1
+
+# power of 3
+def powerOfThree(n):
+   if n == 0:
+      return False
+   elif n == 1:
+      return True
+   elif n % 3 == 0:
+      return powerOfThree(n//3)
+   else:
+	   return False
+	      
+n = int(input())
+print(powerOfThree(n))
