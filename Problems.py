@@ -466,3 +466,21 @@ def firstUniqChar(self, s: str) -> int:
             if count_chars[char] == 1:
                 return index
         return -1
+# repeated substring , brute force
+def repeatedSubstring(s):
+   uniq = []
+   for char in s:
+      if char not in uniq:
+         uniq.append(char)
+      else:
+         break
+   substr = ''.join(uniq)
+   if len(s) % len(substr) == 0:
+      for i in range(0,len(s)//2, len(substr)):
+         for j in range(len(substr)):
+            if s[i+j]  != substr[j]:
+               return False
+   else:
+      return False
+            
+   return True
