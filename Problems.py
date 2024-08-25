@@ -439,3 +439,16 @@ def myAtoi(self, input: str) -> int:
         # We have formed a valid number without any overflow/underflow.
         # Return it after multiplying it with its sign.
         return sign * result
+
+# repeated character
+def firstRepeatedCharacter(str1):
+   unique_chars = []
+ 
+   if len(str1) > 0:
+       for char in str1:
+          if char not in unique_chars:
+             unique_chars.append(char)
+          else: 
+           return char.lower()
+   return ""
+     
