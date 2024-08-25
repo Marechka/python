@@ -452,3 +452,17 @@ def firstRepeatedCharacter(str1):
            return char.lower()
    return ""
      
+# first unique char
+def firstUniqChar(self, s: str) -> int:
+        count_chars = {}
+
+        for char in s:
+            if char in count_chars:
+                count_chars[char] += 1
+            else:
+                count_chars[char] = 1
+        
+        for index, char in enumerate(s):
+            if count_chars[char] == 1:
+                return index
+        return -1
