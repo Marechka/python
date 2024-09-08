@@ -484,3 +484,19 @@ def repeatedSubstring(s):
       return False
             
    return True
+
+#target sum of 2 elements of sorted array
+def check_for_target(nums, target):
+   left = 0
+   right = len(nums)-1
+
+   while left < right:
+      sum = nums[left]+nums[right]
+      if sum == target:
+         return True
+      elif sum > target:
+         right -= 1
+      else:
+         left += 1
+   return False
+      
