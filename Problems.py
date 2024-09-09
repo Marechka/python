@@ -518,3 +518,13 @@ def combine(arr1, arr2):
       ans.append(arr2[j])
       j += 1
    return ans
+
+#reverse string 
+def reverse(strlist):
+   j = len(strlist)-1
+
+   for i in range(len(strlist)//2):
+      strlist[i], strlist[j] = strlist[j],strlist[i]
+      j -= 1
+
+   return strlist
