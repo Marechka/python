@@ -554,3 +554,35 @@ def valid_sum_sub(nums, k):
          left += 1
       answer = max(answer, right - left + 1)
    return answer
+
+#longest substring with 1 zero
+def find_length(s):
+   left=curr=answer=0
+   for right in range(len(s)):
+      if s[right] == "0":
+         curr += 1
+      while curr > 1:
+         if s[left] == "0":
+            curr -= 1
+         left += 1
+      answer = max(answer, right-left +1)
+   return answer
+
+
+def numSubarrayProductLessThanK(nums, k):
+
+   if k <= 1:
+      return 0
+   
+   left=answer = 0
+   curr = 1
+   for right in range(len(nums)):
+      curr *= nums[right]
+
+      while curr >= k:
+         curr //= nums[left]
+         left += 1
+      answer += right-left+1
+   return answer
+
+      
