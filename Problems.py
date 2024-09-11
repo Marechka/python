@@ -604,3 +604,15 @@ def findMaxAverage(nums, k):
       curr += nums[i] - nums[i-k]
       ans = max(ans, curr/k)
    return ans
+#
+def longestOnes(nums,k):
+   ans=curr=left = 0
+   for right in range(len(nums)):
+      if nums[right] == 0:
+         curr += 1
+      while curr > k:
+         if nums[left] == 0:
+            curr -= 1
+         left += 1
+      ans = max(ans, right-left+1)
+   return ans
