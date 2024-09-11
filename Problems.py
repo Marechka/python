@@ -543,3 +543,14 @@ def reverse(strlist):
                 result[i] = nums[right]**2
                 right -= 1
         return result
+
+# longest valid subarray (sum elements = k)
+def valid_sum_sub(nums, k):
+   left=curr=answer=0
+   for right in range(len(nums)):
+      curr += nums[right]
+      while curr > k:
+         curr -= nums[left]
+         left += 1
+      answer = max(answer, right - left + 1)
+   return answer
