@@ -638,3 +638,19 @@ def runningSum(nums):
         for i in range(1, len(nums)):
             sum.append(nums[i]+sum[-1])
         return sum
+#number of ways to split array
+
+# Given an integer array nums, find the number of ways to split the array into two 
+# parts so that the first section has a sum greater than or equal to the sum of the
+#  second section. The second section should have at least one number.
+
+def waysToSplitArray(nums):
+   ans = left_arr = 0
+   total = sum(nums)
+   for i in range(len(nums)-1):
+      left += nums[i]
+      right = total - left_arr
+      if left >= right:
+         ans += 1
+   return ans
+
