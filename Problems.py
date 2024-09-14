@@ -659,4 +659,4 @@ def minStartValue(self, nums: List[int]) -> int:
         for num in nums:
             total += num
             min_val = min(min_val, total)
-        return abs(min_val) + 1
+        return -min_val + 1
