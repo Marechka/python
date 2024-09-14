@@ -631,3 +631,10 @@ def subarray_sums(queries, nums, k):
    for x, y in queries:
       ans.append(prefix[y]-prefix[x] + nums[x] < k)
    return ans
+
+#running sum 
+def runningSum(nums):
+        sum = [nums[0]]
+        for i in range(1, len(nums)):
+            sum.append(nums[i]+sum[-1])
+        return sum
