@@ -653,4 +653,10 @@ def waysToSplitArray(nums):
       if left >= right:
          ans += 1
    return ans
-
+#min start value
+def minStartValue(self, nums: List[int]) -> int:
+        total = min_val = 0
+        for num in nums:
+            total += num
+            min_val = min(min_val, total)
+        return abs(min_val) + 1
