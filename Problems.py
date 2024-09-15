@@ -660,3 +660,23 @@ def minStartValue(self, nums: List[int]) -> int:
             total += num
             min_val = min(min_val, total)
         return -min_val + 1
+# get avereges of sliding window with k radius 
+def getAverages(nums, k):
+        n = len(nums)
+        ans = [-1]*n
+        window_size = 2*k+1
+        sum = avg = 0
+
+        if window_size >  n:
+            return ans
+        if k == 0:
+            return nums
+
+        # sum of window
+        for i in range(window_size):
+            sum += nums[i]
+        ans[k] = sum//window_size
+        for i in range(window_size, n):
+            sum += nums[i] - nums[i-window_size]
+            ans[i-k] = sum// window_size
+        return ans
