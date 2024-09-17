@@ -680,3 +680,22 @@ def getAverages(nums, k):
             sum += nums[i] - nums[i-window_size]
             ans[i-k] = sum// window_size
         return ans
+
+# reverse words in string (primitive)
+def reverseWords(self, s: str) -> str:
+        slist = list(s)
+        i = 0
+        for j in range(len(s)):
+            if slist[j] == " ":
+                index = j-1
+                while i < index:
+                    slist[i],slist[index] = slist[index], slist[i]
+                    i += 1
+                    index -= 1
+                i = j+1
+            if j == len(s)-1:
+                while i < j:
+                    slist[i],slist[j] = slist[j], slist[i]
+                    i += 1
+                    j -= 1                
+        return "".join(slist)
