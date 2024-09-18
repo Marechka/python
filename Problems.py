@@ -699,3 +699,19 @@ def reverseWords(self, s: str) -> str:
                     i += 1
                     j -= 1                
         return "".join(slist)
+
+#reverse only letters
+def reverseOnlyLetters(self, s: str) -> str:
+        s_list = list(s)
+        left  = 0
+        right = len(s)-1
+        while left < right:
+            while not s[left].isalpha():
+                left += 1
+            while not s[right].isalpha():
+                right -= 1
+            s_list[left], s_list[right] = s_list[right], s_list[left]
+            left += 1
+            right -= 1
+        return "".join(s_list)
+            
