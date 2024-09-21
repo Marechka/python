@@ -715,3 +715,17 @@ def reverseOnlyLetters(self, s: str) -> str:
             right -= 1
         return "".join(s_list)
             
+#minimum common value 
+def getCommon(self, nums1: List[int], nums2: List[int]) -> int:
+   first = second  = 0
+   ans = -1
+   while first < len(nums1) and second < len(nums2):
+      if nums1[first] == nums2[second]:
+         ans = nums1[first]
+         break
+            
+      if nums1[first] < nums2[second]:
+         first += 1
+      else:
+         second += 1
+   return ans
