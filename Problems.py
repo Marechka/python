@@ -737,3 +737,18 @@ def moveZeroes(self, nums: List[int]) -> None:
             if nums[i] != 0:
                 nums[zero], nums[i] = nums[i], nums[zero]
                 zero += 1
+# reverse prefix of word
+def reversePrefix(self, word: str, ch: str) -> str:
+        list_word = list(word)
+        i = j = 0
+        while i < len(word):
+            if word[i] == ch:
+                break
+            i += 1
+        if i == len(word):
+            return word
+        while j < i:
+            list_word[j], list_word[i] = list_word[i], list_word[j]
+            j += 1
+            i -= 1
+        return "".join(list_word)
