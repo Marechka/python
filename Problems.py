@@ -729,3 +729,11 @@ def getCommon(self, nums1: List[int], nums2: List[int]) -> int:
       else:
          second += 1
    return ans
+
+#move zeros
+def moveZeroes(self, nums: List[int]) -> None:
+        zero = 0
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                nums[zero], nums[i] = nums[i], nums[zero]
+                zero += 1
