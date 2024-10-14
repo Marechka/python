@@ -752,3 +752,16 @@ def reversePrefix(self, word: str, ch: str) -> str:
             j += 1
             i -= 1
         return "".join(list_word)
+
+#minimum size subarray sum
+def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+        sum = left = right = 0
+        size = float('inf')
+
+        for right in range(len(nums)):
+            sum += nums[right]
+            while sum >= target:
+                size = min(right - left + 1, size)
+                sum -= nums[left]
+                left += 1
+        return size if size != float('inf') else 0
