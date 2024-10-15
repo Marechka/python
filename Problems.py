@@ -765,3 +765,20 @@ def minSubArrayLen(self, target: int, nums: List[int]) -> int:
                 sum -= nums[left]
                 left += 1
         return size if size != float('inf') else 0
+#Maximum Number of Vowels in a Substring of Given Length
+def maxVowels(self, s: str, k: int) -> int:
+        max_vowel = curr_vowel = 0
+        left = 0
+        vowels =["a", "e", "i", "o", "u"]
+        for right in range(k):
+            if s[right] in vowels:
+                curr_vowel += 1
+        max_vowel = curr_vowel
+        for right in range(k,len(s)):
+            if s[right] in vowels:
+                curr_vowel += 1
+            if s[left] in vowels:
+                curr_vowel -= 1
+            left += 1
+            max_vowel = max(max_vowel, curr_vowel)
+        return max_vowel
