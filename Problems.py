@@ -795,3 +795,11 @@ def twoSum(self, nums: List[int], target: int) -> List[int]:
             dic[num] = i
         
         return [-1, -1]
+
+# missing number
+def missingNumber(self, nums: List[int]) -> int:
+        nums_set = set(nums)
+        for i in range(len(nums)+1):
+            if i not in nums_set:
+                return i
+        return -1
