@@ -803,3 +803,31 @@ def missingNumber(self, nums: List[int]) -> int:
             if i not in nums_set:
                 return i
         return -1
+
+# find longest substring
+
+def find_longest_substring(s, k):
+    counts = defaultdict(int)
+    left = ans = 0
+    for right in range(len(s)):
+        counts[s[right]] += 1
+        while len(counts) > k:
+            counts[s[left]] -= 1
+            if counts[s[left]] == 0:
+                del counts[s[left]]
+            left += 1
+        
+        ans = max(ans, right - left + 1)
+    
+    return ans
+#intersection of multiple arrays
+def intersection(self, nums: List[List[int]]) -> List[int]:
+        map = defaultdict(int)
+        ans = []
+        for arr in nums:
+            for i in arr:
+                map[i] += 1
+        for key in map:
+            if map[key] == len(nums):
+                    ans.append(key)
+        return sorted(ans)
