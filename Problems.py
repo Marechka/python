@@ -831,3 +831,21 @@ def intersection(self, nums: List[List[int]]) -> List[int]:
             if map[key] == len(nums):
                     ans.append(key)
         return sorted(ans)
+# equal occurance
+def areOccurrencesEqual(self, s: str) -> bool:
+        count = defaultdict(int)
+        for ch in s:
+            count[ch] += 1
+        return len(set(count.values())) == 1
+
+#largest unique number
+def largestUniqueNumber(self, nums: List[int]) -> int:
+        occurrence = defaultdict(int)
+        for num in nums:
+                occurrence[num] += 1
+        answer = -1
+        for key, val in occurrence.items():
+            if key > answer and val == 1:
+                answer = key
+        return answer
+        
