@@ -848,4 +848,39 @@ def largestUniqueNumber(self, nums: List[int]) -> int:
             if key > answer and val == 1:
                 answer = key
         return answer
-        
+
+# max number of "balloon" in a string
+def maxNumberOfBalloons(self, text: str) -> int:
+
+    let_dict = {"b":0, "a":0, "l":0, "o":0, "n":0}
+    for ch in text:
+        if ch in let_dict:
+            let_dict[ch] += 1
+
+    min_single = float('inf')
+    min_double = float('inf')
+
+    for key, value in let_dict.items():
+        if key in ["b", "a", "n"]:
+            min_single = min(min_single, value)
+        elif key in ["l", "o"]:
+            min_double = min(min_double, value // 2) 
+
+    if min_single == float('inf') or min_double == float('inf'):
+        return 0
+
+    return min(min_single, min_double)
+            
+def findMaxLength(self, nums: List[int]) -> int:
+        max_len = 0
+        for i in range(len(nums)):
+            zeros = ones = 0
+            for j in range(i, len(nums)):
+                if nums[j] == 1:
+                    ones += 1
+                else:
+                    zeros += 1
+                if ones == zeros:
+                    max_len = max(max_len, j - i + 1)
+        return max_len
+            
