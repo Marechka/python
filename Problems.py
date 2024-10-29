@@ -870,7 +870,7 @@ def maxNumberOfBalloons(self, text: str) -> int:
         return 0
 
     return min(min_single, min_double)
-            
+# brute force        
 def findMaxLength(self, nums: List[int]) -> int:
         max_len = 0
         for i in range(len(nums)):
@@ -883,4 +883,19 @@ def findMaxLength(self, nums: List[int]) -> int:
                 if ones == zeros:
                     max_len = max(max_len, j - i + 1)
         return max_len
-            
+
+# array approach
+def findMaxLength(self,nums):
+        arr = [-2] * (2 * len(nums) + 1)
+        arr[len(nums)] = -1
+        maxlen = 0
+        count = 0
+        
+        for i in range(len(nums)):
+            count += -1 if nums[i] == 0 else 1
+            if arr[count + len(nums)] >= -1:
+                maxlen = max(maxlen, i - arr[count + len(nums)])
+            else:
+                arr[count + len(nums)] = i
+        
+        return maxlen    
