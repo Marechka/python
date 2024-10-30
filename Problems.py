@@ -937,3 +937,15 @@ def numJewelsInStones(self, jewels: str, stones: str) -> int:
             if stone in jewels_count:
                 jewels_count[stone] += 1
         return sum(jewels_count.values())
+
+#longest substring
+def lengthOfLongestSubstring(self, s: str) -> int:
+        length_of_sub = left = 0
+        unique_letters = set()
+        for right in range(len(s)):
+            while s[right] in unique_letters:
+                unique_letters.remove(s[left])
+                left += 1
+            unique_letters.add(s[right])
+            length_of_sub = max(length_of_sub,right-left+1)
+        return length_of_sub
