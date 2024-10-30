@@ -907,3 +907,24 @@ def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
             groups[key].append(s)
         
         return list(groups.values())
+
+# 2352. Equal Row and Column Pairs
+def equalPairs(self, grid: List[List[int]]) -> int:
+        def convert_to_key(arr):
+            return tuple(arr)
+        
+        rows = defaultdict(int)
+        for row in grid:
+            rows[convert_to_key(row)] +=1
+        
+        columns = defaultdict(int)
+        for row in range(len(grid)):
+            arr = []
+            for column in range(len(grid[0])):
+                arr.append(grid[column][row])
+            columns[convert_to_key(arr)] += 1
+        
+        count = 0
+        for key in rows:
+            count += rows[key] * columns[key]
+        return count
