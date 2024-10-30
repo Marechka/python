@@ -928,3 +928,12 @@ def equalPairs(self, grid: List[List[int]]) -> int:
         for key in rows:
             count += rows[key] * columns[key]
         return count
+
+def numJewelsInStones(self, jewels: str, stones: str) -> int:
+        jewels_count = defaultdict(int)
+        for ch in jewels:
+            jewels_count[ch] = 0
+        for stone in stones:
+            if stone in jewels_count:
+                jewels_count[stone] += 1
+        return sum(jewels_count.values())
