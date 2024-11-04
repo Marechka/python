@@ -949,3 +949,18 @@ def lengthOfLongestSubstring(self, s: str) -> int:
             unique_letters.add(s[right])
             length_of_sub = max(length_of_sub,right-left+1)
         return length_of_sub
+
+#71. Simplify Path
+def simplifyPath(self, path: str) -> str:
+        stack = []
+
+        for part in path.split("/"):
+            if part == "..":
+                if stack:
+                    stack.pop()
+            elif part == "." or not part:
+                continue
+            else:
+                stack.append(part)
+        ans = "/"+"/".join(stack)
+        return ans
